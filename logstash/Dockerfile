@@ -1,7 +1,5 @@
-FROM docker.elastic.co/logstash/logstash:7.10.2
-
-RUN /opt/logstash/bin/logstash-plugin install logstash-integration-jdbc
-RUN mkdir /opt/logstash/vendor/jdbc
-RUN curl -o /opt/logstash/vendor/jdbc/postgresql-42.2.18.jar https://jdbc.postgresql.org/download/postgresql-42.2.18.jar
-
+FROM docker.elastic.co/logstash/logstash:8.10.4 as builder
+RUN /usr/share/logstash/bin/logstash-plugin install logstash-integration-jdbc
+FROM docker.elastic.co/logstash/logstash:8.10.4
+COPY --from=builder /usr/share/logstash /usr/share/logstash
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
