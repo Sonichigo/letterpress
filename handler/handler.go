@@ -22,6 +22,7 @@ func New(database db.Database, esClient *elasticsearch.Client, logger zerolog.Lo
 }
 
 func (h *Handler) Register(group *gin.RouterGroup) {
+	group.GET("/", h.helloWorld)
 	group.GET("/posts/:id", h.GetPost)
 	group.PATCH("/posts/:id", h.UpdatePost)
 	group.DELETE("/posts/:id", h.DeletePost)

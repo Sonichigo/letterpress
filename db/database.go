@@ -24,8 +24,8 @@ type Config struct {
 
 func Init(cfg Config) (Database, error) {
 	db := Database{}
-	dsn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-		cfg.Host, cfg.Port, cfg.Username, cfg.Password, cfg.DbName)
+	dsn := fmt.Sprintf("host=postgres port=5432 user=%s password=%s dbname=%s sslmode=disable",
+		cfg.Username, cfg.Password, cfg.DbName)
 	conn, err := sql.Open("postgres", dsn)
 	if err != nil {
 		return db, err

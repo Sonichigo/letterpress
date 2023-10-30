@@ -13,6 +13,10 @@ import (
 	"github.com/sonichigo/letterpress/models"
 )
 
+func (h *Handler) helloWorld(c *gin.Context) {
+	fmt.Printf("HelloWorld")
+}
+
 func (h *Handler) CreatePost(c *gin.Context) {
 	var post models.Post
 	if err := c.ShouldBindJSON(&post); err != nil {
