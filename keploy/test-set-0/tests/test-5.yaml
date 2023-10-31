@@ -1,0 +1,46 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-5
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/v2/search?q=2
+        url_params:
+            q: "2"
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Host: localhost:8080
+            Postman-Token: 027c2f3a-d034-4163-a1e6-3c7af4b74e40
+            User-Agent: PostmanRuntime/7.32.1
+        body: ""
+        body_type: ""
+    resp:
+        status_code: 500
+        header:
+            Content-Length: "33"
+            Content-Type: application/json; charset=utf-8
+            Date: Mon, 30 Oct 2023 12:17:43 GMT
+        body: '{"error":"no such index [posts]"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            - header.Date
+    created: 1698668266
+curl: |
+    curl --request GET \
+      --url http://localhost:8080/v2/search?q=2 \
+      --header 'Postman-Token: 027c2f3a-d034-4163-a1e6-3c7af4b74e40' \
+      --header 'Host: localhost:8080' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Accept: */*' \
+      --header 'Cache-Control: no-cache' \

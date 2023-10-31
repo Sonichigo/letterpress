@@ -1,0 +1,47 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-8
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/v2/search/
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Host: localhost:8080
+            Postman-Token: 31b88d10-b1db-48b7-855f-582729491580
+            User-Agent: PostmanRuntime/7.32.1
+        body: ""
+        body_type: ""
+    resp:
+        status_code: 301
+        header:
+            Content-Length: "45"
+            Content-Type: text/html; charset=utf-8
+            Date: Mon, 30 Oct 2023 12:28:59 GMT
+            Location: /v2/search
+        body: |+
+            <a href="/v2/search">Moved Permanently</a>.
+
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            - header.Date
+    created: 1698668941
+curl: |
+    curl --request GET \
+      --url http://localhost:8080/v2/search/ \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Accept: */*' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Postman-Token: 31b88d10-b1db-48b7-855f-582729491580' \
+      --header 'Host: localhost:8080' \

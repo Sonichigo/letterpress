@@ -1,0 +1,46 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-11
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/v2/search?q=Sarthak
+        url_params:
+            q: Sarthak
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Host: localhost:8080
+            Postman-Token: c3db4c56-aff6-49d0-b39c-1f692fa3463f
+            User-Agent: PostmanRuntime/7.32.1
+        body: ""
+        body_type: ""
+    resp:
+        status_code: 500
+        header:
+            Content-Length: "33"
+            Content-Type: application/json; charset=utf-8
+            Date: Mon, 30 Oct 2023 12:29:17 GMT
+        body: '{"error":"no such index [posts]"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            - header.Date
+    created: 1698668959
+curl: |
+    curl --request GET \
+      --url http://localhost:8080/v2/search?q=Sarthak \
+      --header 'Accept: */*' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Postman-Token: c3db4c56-aff6-49d0-b39c-1f692fa3463f' \
+      --header 'Host: localhost:8080' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \

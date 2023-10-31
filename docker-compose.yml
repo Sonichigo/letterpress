@@ -11,8 +11,6 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-    networks:
-      - keploy-network
 
   api:
     build:
@@ -25,11 +23,10 @@ services:
       - "8080:8080"
     depends_on:
       - postgres
-    networks:
-      - keploy-network
 
   elasticsearch:
     image: 'docker.elastic.co/elasticsearch/elasticsearch:8.10.4'
+    container_name: elastic
     environment:
       - discovery.type=single-node
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -38,8 +35,7 @@ services:
       - "9200:9200"
     volumes:
       - esdata:/usr/share/elasticsearch/data
-    networks:
-      - keploy-network
+
   logstash:
     build:
      context: logstash
@@ -52,8 +48,7 @@ services:
     depends_on:
       - postgres
       - elasticsearch
-    networks:
-      - keploy-network
+
   kibana:
     image: 'docker.elastic.co/kibana/kibana:8.10.4'
     ports:
@@ -64,14 +59,11 @@ services:
      - "ELASTICSEARCH_URL=http://elasticsearch:9200"
     depends_on:
      - elasticsearch
-    networks:
-      - keploy-network
 
 volumes:
   pgdata:
     driver: local
   esdata:
     driver: local
-networks:
-  keploy-network:
-    external: true
+  # logstash:
+  #   driver: local

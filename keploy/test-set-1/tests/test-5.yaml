@@ -1,0 +1,57 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-5
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/v2/posts
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Content-Length: "381"
+            Content-Type: application/json
+            Host: localhost:8080
+            Postman-Token: cffb0a2e-3a19-4972-9cf9-166e4a25c15b
+            Referer: http://localhost:8080/v2/posts/
+            User-Agent: PostmanRuntime/7.32.1
+        body: |-
+            {
+                "title":"Meet Sarthak, Our Next Feature for CCN Network",
+                "body":"After introducing the CCN Italy Chapter to you in July, the CC Netherlands Chapter in August, CC Bangladesh Chapter in September, CC Tanzania Chapter in October, and the CC India Chapter in November, the CC Mexico Chapter in December, and CC Argentina Chapter in January, we are now traveling to Africa"
+            }
+        body_type: ""
+    resp:
+        status_code: 201
+        header:
+            Content-Length: "386"
+            Content-Type: application/json; charset=utf-8
+            Date: Mon, 30 Oct 2023 12:28:30 GMT
+        body: '{"post":{"id":5,"title":"Meet Sarthak, Our Next Feature for CCN Network","body":"After introducing the CCN Italy Chapter to you in July, the CC Netherlands Chapter in August, CC Bangladesh Chapter in September, CC Tanzania Chapter in October, and the CC India Chapter in November, the CC Mexico Chapter in December, and CC Argentina Chapter in January, we are now traveling to Africa"}}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            - header.Date
+    created: 1698668913
+curl: |-
+    curl --request POST \
+      --url http://localhost:8080/v2/posts \
+      --header 'Accept: */*' \
+      --header 'Host: localhost:8080' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Postman-Token: cffb0a2e-3a19-4972-9cf9-166e4a25c15b' \
+      --header 'Referer: http://localhost:8080/v2/posts/' \
+      --data '{
+        "title":"Meet Sarthak, Our Next Feature for CCN Network",
+        "body":"After introducing the CCN Italy Chapter to you in July, the CC Netherlands Chapter in August, CC Bangladesh Chapter in September, CC Tanzania Chapter in October, and the CC India Chapter in November, the CC Mexico Chapter in December, and CC Argentina Chapter in January, we are now traveling to Africa"
+    }'

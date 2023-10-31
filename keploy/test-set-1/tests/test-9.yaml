@@ -1,0 +1,46 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-9
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/v2/search
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Host: localhost:8080
+            Postman-Token: 31b88d10-b1db-48b7-855f-582729491580
+            Referer: http://localhost:8080/v2/search/
+            User-Agent: PostmanRuntime/7.32.1
+        body: ""
+        body_type: ""
+    resp:
+        status_code: 400
+        header:
+            Content-Length: "35"
+            Content-Type: application/json; charset=utf-8
+            Date: Mon, 30 Oct 2023 12:28:59 GMT
+        body: '{"error":"no search query present"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            - header.Date
+    created: 1698668942
+curl: |
+    curl --request GET \
+      --url http://localhost:8080/v2/search \
+      --header 'Referer: http://localhost:8080/v2/search/' \
+      --header 'Host: localhost:8080' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --header 'Accept: */*' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Postman-Token: 31b88d10-b1db-48b7-855f-582729491580' \
+      --header 'Accept-Encoding: gzip, deflate, br' \

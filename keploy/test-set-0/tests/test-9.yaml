@@ -1,0 +1,57 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-9
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/v2/search?q=ritik
+        url_params:
+            q: ritik
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Content-Length: "377"
+            Content-Type: application/json
+            Host: localhost:8080
+            Postman-Token: 0bc42928-b889-412a-9079-7351bdc8bf7f
+            User-Agent: PostmanRuntime/7.32.1
+        body: |-
+            {
+                "title":"Meet Ritik, Our Next Feature for CC Network",
+                "body":"After introducing the CC Italy Chapter to you in July, the CC Netherlands Chapter in August, CC Bangladesh Chapter in September, CC Tanzania Chapter in October, and the CC India Chapter in November, the CC Mexico Chapter in December, and CC Argentina Chapter in January, we are now traveling to Africa"
+            }
+        body_type: ""
+    resp:
+        status_code: 404
+        header:
+            Content-Length: "18"
+            Content-Type: text/plain
+            Date: Mon, 30 Oct 2023 12:20:23 GMT
+        body: 404 page not found
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            - header.Date
+    created: 1698668426
+curl: |-
+    curl --request POST \
+      --url http://localhost:8080/v2/search?q=ritik \
+      --header 'Accept: */*' \
+      --header 'Cache-Control: no-cache' \
+      --header 'Postman-Token: 0bc42928-b889-412a-9079-7351bdc8bf7f' \
+      --header 'Host: localhost:8080' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: PostmanRuntime/7.32.1' \
+      --data '{
+        "title":"Meet Ritik, Our Next Feature for CC Network",
+        "body":"After introducing the CC Italy Chapter to you in July, the CC Netherlands Chapter in August, CC Bangladesh Chapter in September, CC Tanzania Chapter in October, and the CC India Chapter in November, the CC Mexico Chapter in December, and CC Argentina Chapter in January, we are now traveling to Africa"
+    }'
