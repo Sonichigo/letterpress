@@ -65,5 +65,3 @@ volumes:
     driver: local
   esdata:
     driver: local
-  # logstash:
-  #   driver: local
