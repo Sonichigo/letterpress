@@ -7,13 +7,8 @@
         "completed": 1709647749,
         "test_case_id": "test-1",
         "resp": {
-            "body_result": [
-                {
-                    "normal": false,
-                    "expected": "{\"message\":\"Converted\",\"link\":\"http://localhost:8080/link/1\",\"status\":true}\n",
-                    "actual": "{\"message\":\"Converted\",\"link\":\"http://localhost:8080/link/2\",\"status\":true}\n"
-                }
-            ]
+            "expected": "{\"message\":\"Converted\",\"link\":\"http://localhost:8080/link/1\",\"status\":true}\n",
+            "actual": "{\"message\":\"Converted\",\"link\":\"http://localhost:8080/link/2\",\"status\":true}\n"
         }
     },
     {
@@ -26,13 +21,8 @@
         "resp": {
             "method": "GET",
             "url": "http://172.18.0.6:8080/all",
-            "body_result": [
-                {
-                    "normal": false,
-                    "expected": "{\"message\":[{\"id\":\"1\",\"website\":\"https://github.com\"}],\"status\":true}\n",
-                    "actual": "{\"message\":[{\"id\":\"1\",\"website\":\"https://github.com\"},{\"id\":\"2\",\"website\":\"https://github.com\"}],\"status\":true}\n"
-                }
-            ]
+            "expected": "{\"message\":[{\"id\":\"1\",\"website\":\"https://github.com\"}],\"status\":true}\n",
+            "actual": "{\"message\":[{\"id\":\"1\",\"website\":\"https://github.com\"},{\"id\":\"2\",\"website\":\"https://github.com\"}],\"status\":true}\n"
         }
     }
 ]
