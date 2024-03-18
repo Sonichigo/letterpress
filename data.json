@@ -1,43 +1,38 @@
-{
-    "name": "test-set-0",
-    "status": "PASSED",
-    "started": 1710413097,
-    "completed": 1710413097,
-    "test_case_id": "test-1",
-    "req": {
-        "method": "POST",
-        "url": "http://localhost:6000/students",
-        "header": {
-            "Accept": "*/*",
-            "Content-Length": "54",
-            "Content-Type": "application/json",
-            "Host": "localhost:6000",
-            "User-Agent": "curl/8.2.1"
-        },
-        "body": "{\"student_id\": \"12345\", \"name\": \"John Doe\", \"age\": 20}",
-        "timestamp": "2024-03-14T10:32:00.673Z"
+[
+    {
+        "kind": "Http",
+        "name": "report-1",
+        "status": "FAILED",
+        "started": 1709647749,
+        "completed": 1709647749,
+        "test_case_id": "test-1",
+        "resp": {
+            "body_result": [
+                {
+                    "normal": false,
+                    "expected": "{\"message\":\"Converted\",\"link\":\"http://localhost:8080/link/1\",\"status\":true}\n",
+                    "actual": "{\"message\":\"Converted\",\"link\":\"http://localhost:8080/link/2\",\"status\":true}\n"
+                }
+            ]
+        }
     },
-    "resp": {
-        "status_code": 200,
-        "status_message": "OK",
-        "timestamp": "2024-03-14T10:32:02.696Z"
-    },
-    "noise": {
-        "header.Date": []
-    },
-    "result": {
-        "status_code": {
-            "normal": true,
-            "expected": 200,
-            "actual": 200
-        },
-        "body_result": [
-            {
-                "normal": true,
-                "type": "JSON",
-                "expected": "{\n  \"message\": \"Student created successfully\"\n}\n",
-                "actual": "{\n  \"message\": \"Student created successfully\"\n}\n"
-            }
-        ]
+    {
+        "kind": "Http",
+        "name": "report-1",
+        "status": "FAILED",
+        "started": 1709647749,
+        "completed": 1709647749,
+        "test_case_id": "test-2",
+        "req": {
+            "method": "GET",
+            "url": "http://172.18.0.6:8080/all",
+            "body_result": [
+                {
+                    "normal": false,
+                    "expected": "{\"message\":[{\"id\":\"1\",\"website\":\"https://github.com\"}],\"status\":true}\n",
+                    "actual": "{\"message\":[{\"id\":\"1\",\"website\":\"https://github.com\"},{\"id\":\"2\",\"website\":\"https://github.com\"}],\"status\":true}\n"
+                }
+            ]
+        }
     }
-}
+]
