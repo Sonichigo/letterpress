@@ -1,45 +1,45 @@
 {
-  "name": "test-set-0",
-  "status": "PASSED",
-  "started": 1710413097,
-  "completed": 1710413097,
-  "test_case_id": "test-1",
-  "req": {
-    "method": "POST",
-    "proto_major": 1,
-    "proto_minor": 1,
-    "url": "http://localhost:6000/students",
-    "header": {
-      "Accept": "*/*",
-      "Content-Length": "54",
-      "Content-Type": "application/json",
-      "Host": "localhost:6000",
-      "User-Agent": "curl/8.2.1"
+    "name": "test-set-0",
+    "status": "PASSED",
+    "started": 1710413097,
+    "completed": 1710413097,
+    "test_case_id": "test-1",
+    "req": {
+        "method": "POST",
+        "proto_major": 1,
+        "proto_minor": 1,
+        "url": "http://localhost:6000/students",
+        "header": {
+            "Accept": "*/*",
+            "Content-Length": "54",
+            "Content-Type": "application/json",
+            "Host": "localhost:6000",
+            "User-Agent": "curl/8.2.1"
+        },
+        "body": "{\"student_id\": \"12345\", \"name\": \"John Doe\", \"age\": 20}",
+        "timestamp": "2024-03-14T10:32:00.673Z"
     },
-    "body": "{\"student_id\": \"12345\", \"name\": \"John Doe\", \"age\": 20}",
-    "timestamp": "2024-03-14T10:32:00.673Z"
-  },
-  "resp": {
-    "status_code": 200,
-    "header": {
-      "Content-Length": "48",
-      "Content-Type": "application/json",
-      "Date": "Thu, 14 Mar 2024 10:32:00 GMT",
-      "Server": "Werkzeug/2.2.2 Python/3.11.6"
+    "resp": {
+        "status_code": 200,
+        "header": {
+            "Content-Length": "48",
+            "Content-Type": "application/json",
+            "Date": "Thu, 14 Mar 2024 10:32:00 GMT",
+            "Server": "Werkzeug/2.2.2 Python/3.11.6"
+        },
+        "body": "{\n  \"message\": \"Student created successfully\"\n}\n",
+        "status_message": "OK",
+        "proto_major": 0,
+        "proto_minor": 0,
+        "timestamp": "2024-03-14T10:32:02.696Z"
     },
-    "body": "{\n  \"message\": \"Student created successfully\"\n}\n",
-    "status_message": "OK",
-    "proto_major": 0,
-    "proto_minor": 0,
-    "timestamp": "2024-03-14T10:32:02.696Z"
-  },
-  "noise": {
-    "header.Date": []
-  },
-  "result": {
-    "status_code": {
-      "expected": 200,
-      "actual": 200
+    "noise": {
+        "header.Date": []
+    },
+    "result": {
+        "status_code": {
+            "expected": 200,
+            "actual": 200
+        }
     }
-}
 }
