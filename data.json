@@ -23,7 +23,7 @@
         "started": 1709647749,
         "completed": 1709647749,
         "test_case_id": "test-2",
-        "req": {
+        "resp": {
             "method": "GET",
             "url": "http://172.18.0.6:8080/all",
             "body_result": [
