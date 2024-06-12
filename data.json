@@ -1,0 +1,28 @@
+[
+    {
+        "kind": "Http",
+        "name": "report-1",
+        "status": "FAILED",
+        "started": 1709647749,
+        "completed": 1709647749,
+        "test_case_id": "test-1",
+        "resp": {
+            "expected": "{\"message\":\"Converted\",\"link\":\"http://localhost:8080/link/1\",\"status\":true}\n",
+            "actual": "{\"message\":\"Converted\",\"link\":\"http://localhost:8080/link/2\",\"status\":true}\n"
+        }
+    },
+    {
+        "kind": "Http",
+        "name": "report-1",
+        "status": "FAILED",
+        "started": 1709647749,
+        "completed": 1709647749,
+        "test_case_id": "test-2",
+        "resp": {
+            "method": "GET",
+            "url": "http://172.18.0.6:8080/all",
+            "expected": "{\"message\":[{\"id\":\"1\",\"website\":\"https://github.com\"}],\"status\":true}\n",
+            "actual": "{\"message\":[{\"id\":\"1\",\"website\":\"https://github.com\"},{\"id\":\"2\",\"website\":\"https://github.com\"}],\"status\":true}\n"
+        }
+    }
+]
